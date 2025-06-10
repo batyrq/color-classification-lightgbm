@@ -1,69 +1,36 @@
-# color-classification-lightgbm
-A program that identifies color of each pixel of the image, printing the color of each pixel.
+#  Color Classification using K-Nearest Neighbors (KNN)
 
+This project identifies the color of **each pixel** in an image using a trained **K-Nearest Neighbors (KNN)** classifier. The model is trained on labeled RGB values from a curated dataset of color names and predicts the closest color name for every pixel in a test image.
 
-Color Classification using LightGBM
--This project uses a trained LightGBM classifier to identify and classify colors pixel-by-pixel in an input image. The model is trained on labeled RGB values from a curated dataset of color names.
+---
 
-Files Included
--Color classification using LightGBM.ipynb – Jupyter notebook containing the full training and inference pipeline.
+##  Files Included
 
--color_names.csv – Dataset of color names with RGB values.
+- `Color classification using KNN.ipynb` – Jupyter notebook containing the full training and inference pipeline.
+- `color_names.csv` – Dataset of named colors with RGB values.
+- `fluorescent_green__50940.webp` – Sample image used for pixel-level color classification.
 
--fluorescent_green__50940.webp – Sample image used for pixel-level color classification.
+---
 
-Features
--Trains a LightGBMClassifier on labeled RGB color data.
+##  Features
 
--Uses OpenCV to read and convert image from BGR to RGB format.
+- Trains a `KNeighborsClassifier` on labeled RGB color data.
+- Uses OpenCV to load and convert images from BGR to RGB format.
+- Predicts and prints the color of each pixel in the image.
+- Encodes color labels using `LabelEncoder` for model training.
+- Simple and interpretable KNN approach (better than logistic regression for this task).
 
--Predicts and prints the color of each pixel in a test image using the trained model.
+---
 
--Encodes color names using LabelEncoder.
+##  How to Run
 
-How to Run
--Clone the repo or download the .ipynb file and necessary assets.
+1. **Clone the repo** or download the `.ipynb` file and necessary assets (`.csv`, `.webp`).
+2. **Install required packages** (if running locally or in Colab):
 
--Install required packages (in Colab or locally):
+   ```bash
+   pip install scikit-learn opencv-python-headless pandas
 
-bash
-Copy
-Edit
-pip install lightgbm opencv-python-headless scikit-learn pandas
--Run the notebook:
+## Author
 
--Upload the color_names.csv and the image file.
-
--Execute all cells in the notebook.
-
-Example Output:
-csharp
-Copy
-Edit
-color of pixel in 0 0 is Light Green
-color of pixel in 0 1 is Light Green
-...
-Each pixel is classified into a predefined color name based on its RGB value.
-
-Dependencies
--Python 3.7+
-
--pandas
-
--scikit-learn
-
--lightgbm
-
--opencv-python / opencv-python-headless (for Colab)
-
-Future Improvements
--Optimize performance for large images (current version is pixel-by-pixel and slow).
-
--Use vectorized prediction instead of nested loops.
-
--Visualize classified color masks.
-
--Add GUI or interactive color map.
-
-Author
-Batyr – https://github.com/batyrq
+**Batyr**  
+[GitHub Profile](https://github.com/batyrq)
